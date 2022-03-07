@@ -58,15 +58,13 @@ class Bird {
             this.jumpHeightLength = this.y;
             this.isFirstToSaveLength = false;
         }
-        if(this.y > this.jumpHeightLength - 60){ 
-            this.y -= 3;
+        if(this.y > this.jumpHeightLength - 65){ 
+            this.y -= 3.5;
         }else{
             this.isFirstToSaveLength = true;
             this.fallStatus = true
         }
     };
-    show(){
-    console.log(this.images)}
 }
 
 

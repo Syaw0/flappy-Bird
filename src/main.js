@@ -1,18 +1,20 @@
 import {Bird } from "./lib/entites/bird.js"
+import {Barrier} from "./lib/entites/barrier.js"
 import "./styles/main.css"
 let canvas = document.querySelector("#canvas")
 let ctx = canvas.getContext("2d")
 let bird
+let barrierArr = [] 
 let animationFrame
 canvas.width = 420
-canvas.height = 540
+canvas.height = 500
 
 
 
 window.addEventListener("resize" , ()=>{
     cancelAnimationFrame(animationFrame)
     canvas.width = 420
-    canvas.height = 540;
+    canvas.height = 500;
     init()
 })
 
@@ -35,12 +37,14 @@ window.addEventListener("touchstart" , (e)=>{
 
 const init = () => {
     bird = new Bird(ctx);
+    //createBarrier()
     animate();
 }
 
 
 const animateHanlde = () => {
     birdHanlde();
+    barrierHanlde()
 }
 
 const animate = () => {
@@ -65,9 +69,32 @@ const birdHanlde = () => {
     bird.draw()
 }
 
+const createBarrier = () => {
+    if(barrierArr.length < 3){
+        for(let i = barrierArr.length ; i <3 ; i++){
+            if(barrierArr[0] == undefined ){ //if array is empty do this
+                barrierArr.push(new Barrier(ctx ,canvas.height , canvas.width , canvas.width ))
+            }else{ //else do this to create barriel with a space between them
+                let distance = barrierArr[barrierArr.length - 1].x + 200 // this is distance of 2 barrier 
+                barrierArr.push(new Barrier(ctx ,canvas.height ,canvas.width , distance ))
+            }
+        }
+    }
+}
+
+
+const barrierHanlde = () => {
+    createBarrier()
+    for(let barrier = 0 ; barrier < barrierArr.length ; barrier++ ){
+        if(barrierArr[barrier].x <-60){barrierArr.splice(barrier , 1 ) }
+        barrierArr[barrier].move();
+        barrierArr[barrier].draw();
+    }
+    }
 
 const adjustCanvasSize = () => {
-    if( window.innerWidth < 420 || canvas.height < 540){
+    if( window.innerWidth < 420 || canvas.height < 500){
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight
     }}
+
