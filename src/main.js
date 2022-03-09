@@ -1,9 +1,11 @@
 import {Bird } from "./lib/entites/bird.js"
 import {Barrier} from "./lib/entites/barrier.js"
+import {Background} from "./lib/entites/background.js"
 import "./styles/main.css"
 let canvas = document.querySelector("#canvas")
 let ctx = canvas.getContext("2d")
 let bird
+let background
 let barrierArr = [] 
 let animationFrame
 canvas.width = 420
@@ -36,6 +38,7 @@ window.addEventListener("touchstart" , (e)=>{
 })
 
 const init = () => {
+    background = new Background(ctx)
     bird = new Bird(ctx);
     //createBarrier()
     animate();
@@ -43,8 +46,9 @@ const init = () => {
 
 
 const animateHanlde = () => {
+    backgroundHanlde();
     birdHanlde();
-    barrierHanlde()
+    barrierHanlde();
 }
 
 const animate = () => {
@@ -91,6 +95,13 @@ const barrierHanlde = () => {
         barrierArr[barrier].draw();
     }
     }
+
+const backgroundHanlde = () => {
+    background.move();
+    background.draw();
+}
+
+
 
 const adjustCanvasSize = () => {
     if( window.innerWidth < 420 || canvas.height < 500){
