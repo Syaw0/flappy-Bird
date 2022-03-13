@@ -23,7 +23,7 @@ class Bird {
             fall:fallingBird, 
             jump:jumpingBird
         };
-        this.live = true
+        this.live = false
         this.rotation = 0;
 
     };
@@ -65,6 +65,9 @@ class Bird {
             this.fallStatus = true
         }
     };
+	gameover(){
+		this.x -= 1
+	}
 }
 
 

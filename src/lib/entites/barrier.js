@@ -8,19 +8,18 @@ let greenPipeRev = new Image();
 greenPipeRev.src = greenPipeRevImg
 
 class Barrier {
-    constructor(ctx , canvasHeight , canvasWidth , distance){
+    constructor(ctx , canvasHeight , canvasWidth , distance , uniqID){
         this.barrierHeight = 380;
+        this.barrierWidth = 52;
         this.corridorHeight = 120;
         this.canvasHeight = canvasHeight;
         this.canvasWidth = canvasWidth
         this.status = this.chance()
-        //console.log(this.status)
         this.gameSpeed = 1
         this.ctx = ctx
         this.x = distance ;
         //this.y = this.status.y ;
-        //this.sizeX = 0 ;
-        //this.sizeY = 0 ;
+        this.id = uniqID
         this.images = {
             toUp:greenPipe,
             toDown:greenPipeRev
@@ -30,12 +29,12 @@ class Barrier {
 
     draw(){
         if(this.status.mode == "upBarrier"){
-            this.ctx.drawImage(this.images.toDown , this.x  , this.status.y , 52,380) 
+            this.ctx.drawImage(this.images.toDown , this.x  , this.status.y , this.barrierWidth,this.barrierHeight) 
         }else if (this.status.mode == "downBarrier"){
-            this.ctx.drawImage(this.images.toUp , this.x  , this.status.y , 52,380) 
+            this.ctx.drawImage(this.images.toUp , this.x  , this.status.y , this.barrierWidth,this.barrierHeight) 
         }else{
-            this.ctx.drawImage(this.images.toDown , this.x  , this.status.y , 52,380)
-            this.ctx.drawImage(this.images.toUp, this.x  , this.status.y2 , 52,380)
+            this.ctx.drawImage(this.images.toDown , this.x  , this.status.y , this.barrierWidth,this.barrierHeight)
+            this.ctx.drawImage(this.images.toUp, this.x  , this.status.y2 , this.barrierWidth,this.barrierHeight)
         }
     };//we can create random barrier size too...
     move(){

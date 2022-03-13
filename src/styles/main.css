@@ -9,7 +9,12 @@ height: 100vh;
 display:flex;
 justify-content: center;
 align-items:center;
+background-color: black;
 }
 #canvas{
 background-color: black;
+}
+@font-face {
+    font-family: "font1";
+    src: url("../assesst/fonts/font1.otf");
 }

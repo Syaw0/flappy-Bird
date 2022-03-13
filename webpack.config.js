@@ -26,7 +26,7 @@ module.exports={
                 use:[MiniCssExtractPlugin.loader , 'css-loader' , 'postcss-loader' ]
             },
             {
-                test:/\.(jpe?g|jpg|svg|png|gif)$/i , 
+                test:/\.(jpe?g|jpg|svg|png|gif|otf)$/i , 
                 loader:'file-loader',
                 options:{
                     outputPath:'assesst',
