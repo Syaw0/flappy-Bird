@@ -14,7 +14,6 @@ See Demo :...
 
 #### space for jump on pc and touch on phone 
 
-<a href="https://flappy-bird-pearl.vercel.app/">
-  ![FlappyBird](https://user-images.githubusercontent.com/90524474/167182603-87e36200-4125-451e-8b17-376b1ce3d844.png)
-</a>
+  [![FlappyBird](https://user-images.githubusercontent.com/90524474/167182603-87e36200-4125-451e-8b17-376b1ce3d844.png)](https://flappy-bird-pearl.vercel.app/)
+
 
