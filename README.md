@@ -16,6 +16,6 @@ See Demo :...
 
 <a href="https://flappy-bird-pearl.vercel.app/">
 DEMO
-<iframe src="https://flappy-bird-pearl.vercel.app/" width="400" height="400"/>
+  ![FlappyBird](https://user-images.githubusercontent.com/90524474/167182603-87e36200-4125-451e-8b17-376b1ce3d844.png)
 </a>
 
