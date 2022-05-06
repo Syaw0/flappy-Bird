@@ -1,4 +1,4 @@
-## FLAPPY BIRD 
+# FLAPPY BIRD 
 
 ### What is Flappy Bird Project?
 
