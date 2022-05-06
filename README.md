@@ -1,6 +1,6 @@
 ## FLAPPY BIRD 
 
-### about this project
+### What is Flappy Bird Project?
 
 This is a training project just for learning and working
 with canvas technology.
