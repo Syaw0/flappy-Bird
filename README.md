@@ -25,7 +25,7 @@ git clone https://github.com/Syaw0/flappy-Bird.git
 step2 :
 
 ```bash
-cd flappy-bird && npm install
+cd flappy-Bird && npm install
 ```
 
 step3 :
